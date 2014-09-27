@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<yahoo_news_urls>
+	<country id="in">
+		<url>https://in.news.yahoo.com/rss</url>
+	</country>
+	<country id="us">
+		<url>https://news.yahoo.com/rss</url>
+	</country>
+	<country id="sg">
+		<url>https://sg.news.yahoo.com/rss</url>
+		<url>http://asiatoday.com/pressrelease/rss.xml</url>
+	</country>
+</yahoo_news_urls>

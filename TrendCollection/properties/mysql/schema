@@ -1,0 +1,33 @@
+CREATE TABLE IF NOT EXISTS `category` (
+  `id` BIGINT unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(300) NOT NULL,
+  `createdAt` timestamp,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `id` (`id`,`name`)
+)
+
+CREATE TABLE IF NOT EXISTS `sub_category` (
+  `id` BIGINT unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` BIGINT unsigned,
+  `name` varchar(300) NOT NULL,
+  `createdAt` timestamp,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`),
+  KEY `id` (`id`,`name`),
+  KEY `category_id` (`id`,`category_id`)
+)
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` BIGINT unsigned NOT NULL AUTO_INCREMENT,
+  `category_id` BIGINT unsigned,
+  `sub_category_id` BIGINT unsigned DEFAULT NULL,
+  `title` text,
+  `link` varchar(300) NOT NULL,
+  `source` varchar(100) DEFAULT NULL,
+  `country` varchar(20) DEFAULT NULL,
+  `pub_date` timestamp,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `link` (`link`),
+  KEY `id` (`id`,`link`)
+)
