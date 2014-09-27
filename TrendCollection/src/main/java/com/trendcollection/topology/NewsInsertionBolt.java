@@ -26,7 +26,6 @@ public class NewsInsertionBolt extends BaseRichBolt {
 
 	@Override
 	public void execute(Tuple input) {
-		System.out.println("Inserting news");
 		final NewsObject news = (NewsObject) input.getValueByField("news");
 		_collector.ack(input);
 		final Integer newsId = mH.insertNews(news);

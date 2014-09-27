@@ -2,37 +2,6 @@ CREATE KEYSPACE trends WITH replication = {'class': 'SimpleStrategy', 'replicati
 
 USE trends;
 
-CREATE TABLE fb_posts (
-  id int,
-  post_id text,
-  page_id text,
-  pub_date timestamp,
-  title text,
-  country text,
-  comment_count int,
-  comment_text text,
-  content text,
-  created_at timestamp,
-  embedded_url text,
-  like_count int,
-  link text,
-  picture_link text,
-  score double,
-  semantic_score double,
-  share_count int,
-  PRIMARY KEY (id, post_id, page_id, pub_date, country)
-) WITH
-  bloom_filter_fp_chance=0.010000 AND
-  caching='KEYS_ONLY' AND
-  comment='' AND
-  dclocal_read_repair_chance=0.000000 AND
-  gc_grace_seconds=864000 AND
-  read_repair_chance=0.100000 AND
-  replicate_on_write='true' AND
-  populate_io_cache_on_flush='false' AND
-  compaction={'class': 'SizeTieredCompactionStrategy'} AND
-  compression={'sstable_compression': 'SnappyCompressor'};
-
 CREATE TABLE news (
   news_id int,
   source text,
