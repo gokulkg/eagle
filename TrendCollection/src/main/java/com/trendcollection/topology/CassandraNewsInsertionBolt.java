@@ -30,7 +30,7 @@ public class CassandraNewsInsertionBolt extends BaseRichBolt {
 		_collector.ack(input);
 		
 		if (newsId != -1){
-			cW.isertNews(news, newsId);
+		//	cW.isertNews(news, newsId);
 		}
 	}
 	// @Override
